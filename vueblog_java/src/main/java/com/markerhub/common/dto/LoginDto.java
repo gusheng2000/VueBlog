@@ -9,6 +9,7 @@ import cn.hutool.crypto.SecureUtil;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
+import java.util.Date;
 
 /**
  * @Author sc
@@ -23,6 +24,6 @@ public class LoginDto {
     private String username;
     @NotBlank(message = "密码不能为空")
     private String password;
-
+    private Date lastLogin;
 
 }

@@ -48,7 +48,7 @@
         methods: {
             page(currentPage) {
                 this.$axios.get("/blogs?currentPage=" + currentPage).then(res => {
-                    console.log(res);
+                    // console.log(res);
                     this.blogs = res.data.data.records
                     this.currentPage = res.data.data.current
                     this.total = res.data.data.total

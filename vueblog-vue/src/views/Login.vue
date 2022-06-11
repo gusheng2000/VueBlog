@@ -14,8 +14,9 @@
                     </el-form-item>
 
                     <el-form-item>
-                        <el-button type="primary" @click="submitForm('ruleForm')">立即创建</el-button>
+                        <el-button type="primary" @click="submitForm('ruleForm')">登陆</el-button>
                         <el-button @click="resetForm('ruleForm')">重置</el-button>
+                        <el-button type="warning" plain><el-link href="/register">注册</el-link></el-button>
                     </el-form-item>
                 </el-form>
             </el-main>
@@ -30,8 +31,8 @@
         data() {
             return {
                 ruleForm: {
-                    username: 'markerhub',
-                    password: '111111',
+                    username: '李云龙',
+                    password: '123',
                 },
                 rules: {
                     username: [
@@ -59,6 +60,7 @@
                             this.$store.commit("SET_USERINFO", userInfo)
                             //一女润而眠
                             this.$router.push("/blogs")
+                            // console.log(da)
                         })
                     } else {
                         console.log('error submit!!');

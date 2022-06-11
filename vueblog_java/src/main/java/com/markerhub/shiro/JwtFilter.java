@@ -82,24 +82,39 @@ public class JwtFilter extends AuthenticatingFilter {
 
     @Override
     protected boolean preHandle(ServletRequest request, ServletResponse response) throws Exception {
-      /*  HttpServletRequest request1 = WebUtils.toHttp(request);
-        HttpServletResponse httpServletResponse = WebUtils.toHttp(response);
-        httpServletResponse.setHeader("Access-Control-Allow-Origin",request1.getHeader("Origin"));
-        httpServletResponse.setHeader("Access-Control-Allow-Methods","GET,POST,OPTIONS,PUT,DELETE");
-        httpServletResponse.setHeader("Access-Control-Allow-Headers",request1.getHeader("access-control-Allow-Headers"));
-        if (request1.getMethod().equals(RequestMethod.OPTIONS.name())){
-            httpServletResponse.setStatus(HttpStatus.OK.value());
-        }*/
+//        HttpServletRequest request1 = WebUtils.toHttp(request);
+//        HttpServletResponse httpServletResponse = WebUtils.toHttp(response);
+//        httpServletResponse.setHeader("Access-Control-Allow-Origin", request1.getHeader("Origin"));
+//        httpServletResponse.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS,PUT,DELETE");
+//        httpServletResponse.setHeader("Access-Control-Allow-Headers", request1.getHeader("Access-control-Allow-Headers"));
+//        if (request1.getMethod().equals(RequestMethod.OPTIONS.name())) {
+//            httpServletResponse.setStatus(HttpStatus.OK.value());
+//        }
+//        HttpServletRequest request1 = WebUtils.toHttp(request);
+//        HttpServletResponse httpServletResponse = WebUtils.toHttp(response);
+//        httpServletResponse.setHeader("Access-Control-Allow-Origin",request1.getHeader("Origin"));
+//        httpServletResponse.setHeader("Access-Control-Allow-Methods","GET,POST,OPTIONS,PUT,DELETE");
+//        httpServletResponse.setHeader("Access-Control-Allow-Headers","Origin, X-Requested-With, content-Type, Accept, Authorization");
+//        httpServletResponse.setHeader("Access-Control-Allow-Credentials","true");
+
+//        if (request1.getMethod().equals(RequestMethod.OPTIONS.name())){
+//            httpServletResponse.setStatus(HttpStatus.OK.value());
+//        }
+
+
+
         HttpServletRequest request1 = WebUtils.toHttp(request);
         HttpServletResponse httpServletResponse = WebUtils.toHttp(response);
         httpServletResponse.setHeader("Access-Control-Allow-Origin",request1.getHeader("Origin"));
         httpServletResponse.setHeader("Access-Control-Allow-Methods","GET,POST,OPTIONS,PUT,DELETE");
         httpServletResponse.setHeader("Access-Control-Allow-Headers","Origin, X-Requested-With, content-Type, Accept, Authorization");
-        httpServletResponse.setHeader("Access-Control-Allow-Credentials","true");
+//        httpServletResponse.setHeader("Access-Control-Allow-Credentials","true");
+
 
         if (request1.getMethod().equals(RequestMethod.OPTIONS.name())){
             httpServletResponse.setStatus(HttpStatus.OK.value());
         }
+
 
         return super.preHandle(request, response);
     }

@@ -53,7 +53,7 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(IllegalArgumentException.class)
     public Result exceptionHandler(IllegalArgumentException e) {
-        log.error("assert校验异常-----------{}", e);
+          log.error("assert校验异常-----------{}", e);
         return Result.fail(e.getMessage());
     }
 

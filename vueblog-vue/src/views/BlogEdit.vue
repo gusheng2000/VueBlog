@@ -12,7 +12,7 @@
                 </el-form-item>
                 <el-form-item label="内容" prop="content">
                 </el-form-item>
-                <mavon-editor v-model="ruleForm.content"></mavon-editor>
+                <mavon-editor @imgAdd="imgAdd"  ref=md v-model="ruleForm.content"></mavon-editor>
                 <el-form-item>
                     <el-button type="primary" @click="submitForm('ruleForm')">立即创建</el-button>
                     <el-button @click="resetForm('ruleForm')">重置</el-button>
@@ -35,7 +35,7 @@
                     title: '',
                     desription: '',
                     content: '',
-
+                    user_id: ''
                 },
                 rules: {
                     title: [
@@ -52,11 +52,24 @@
             };
         },
         methods: {
+            imgAdd (pos, file) {
+                var formData = new FormData()
+                formData.append('file', file)
+                this.$axios.post("http://150.158.81.243:8081/savePicture",formData,{
+                    headers: { 'Content-Type': 'multipart/form-data' ,'auth': '2C88CB2140E3DFB8666686765EF17A4F'}
+                }).then(res=>{
+                    console.log(res);
+                   this.$refs.md.$img2Url(pos, res.data.data)
+                })
+
+
+
+            },
             submitForm(formName) {
 
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
-                        alert('submit!');
+
                         this.$axios.post("/blog/edit", this.ruleForm, {
                             headers: {
                                 "authorization": localStorage.getItem("token")
@@ -91,6 +104,8 @@
                     this.ruleForm.desription=blog.desription
                     this.ruleForm.content=blog.content
                 })
+            }else {
+                this.ruleForm.user_id=this.$store.getters.getUser.id;
             }
         }
     }

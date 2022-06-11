@@ -4,7 +4,7 @@ import Blogs from "@/views/Blogs";
 import BlogEdit from "@/views/BlogEdit";
 import BlogDetail from "@/views/BlogDetail";
 import VueRouter from "vue-router";
-
+import Register from "@/views/Register";
 Vue.use(VueRouter)
 
 const routes = [
@@ -17,6 +17,11 @@ const routes = [
         path: '/login',
         name: 'Login',
         component: Login
+    },
+    {
+        path: '/register',
+        name: 'register',
+        component: Register
     },
     {
         path: '/blog/add',

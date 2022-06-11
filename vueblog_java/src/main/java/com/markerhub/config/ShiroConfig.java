@@ -45,7 +45,7 @@ public class ShiroConfig {
         securityManager.setSessionManager(sessionManager);
         securityManager.setCacheManager(redisCacheManager);
         /*
-         * 关闭shiro自带的session，详情见文档
+         * 关闭shiro自带的session，
          */
         DefaultSubjectDAO subjectDAO = new DefaultSubjectDAO();
         DefaultSessionStorageEvaluator defaultSessionStorageEvaluator = new DefaultSessionStorageEvaluator();

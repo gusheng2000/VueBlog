@@ -34,7 +34,9 @@ export default new Vuex.Store({
             return state.userInfo
         },
     },
-    actions: {},
+    actions: {
+
+    },
     modules: {}
 
 })
